@@ -4,7 +4,7 @@ import java.util.List;
 
 public class MyRange {
     /*
-    * Input between [-9,9]
+    * Input between [0,9]
     * */
     String input;
 
