@@ -18,4 +18,13 @@ class MySortTest {
         assertEquals(new ArrayList<>(),result);
 
     }
+
+    @Test
+    @DisplayName("Test have only one element in list")
+    public void testSortingWithOneElement(){
+        List<Integer> input = Arrays.asList(1);
+        MySort ms = new MySort(input);
+        List<Integer> result = ms.sortedList();
+        assertEquals(Arrays.asList(1),result);
+    }
 }

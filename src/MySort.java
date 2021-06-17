@@ -9,8 +9,8 @@ public class MySort {
     }
 
     public List<Integer> sortedList() {
-        if(this.input.size() == 0)
-            return new ArrayList<>();
+        if(this.input.size() <= 1)
+            return this.input;
 
         return new ArrayList<>();
     }
