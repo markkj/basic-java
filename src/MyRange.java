@@ -2,6 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyRange {
+    /*
+    * Input between [-9,9]
+    * */
     String input;
 
     public MyRange(String input){
@@ -34,8 +37,7 @@ public class MyRange {
     public String showResult(){
         int startNumber = this.startWithInclude() ? this.getFirstNumber():this.getFirstNumber()+1;
         int endNumber = this.endWithInclude() ? this.getSecondNumber()+1:this.getSecondNumber();
-        System.out.println(startNumber);
-        System.out.println(endNumber);
+
         List<String> result = new ArrayList<>();
         for (int i = startNumber; i < endNumber; i++) {
             result.add(Integer.toString(i));
