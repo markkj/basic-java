@@ -13,6 +13,14 @@ class MyRangeTest {
         assertTrue(result);
     }
 
+    @Test
+    @DisplayName("Check input start with '(' ")
+    public void checkIsStartWithExclude(){
+        MyRange2 ms = new MyRange2("(1,2]");
+        boolean result = ms.startWithExclude();
+        assertTrue(result);
+    }
+
 
 
 

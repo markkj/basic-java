@@ -9,4 +9,8 @@ public class MyRange2 {
     public boolean startWithInclude() {
         return this.input.startsWith("[");
     }
+
+    public boolean startWithExclude() {
+        return this.input.startsWith("(");
+    }
 }
