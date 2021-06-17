@@ -6,5 +6,7 @@ public class Main {
 
         MyRange mr = new MyRange("(1,4]");
         System.out.println(mr.showResult());;
+        int s = 1/2;
+        System.out.println(s);
     }
 }
