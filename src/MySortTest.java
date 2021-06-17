@@ -36,4 +36,13 @@ class MySortTest {
         List<Integer> result = ms.sortedList();
         assertEquals(Arrays.asList(1,2),result);
     }
+
+    @Test
+    @DisplayName("Test Sorting with without sorted list have 2 element")
+    public void testSortingWithTwoElementWithoutSorted(){
+        List<Integer> input = Arrays.asList(2,1);
+        MySort ms = new MySort(input);
+        List<Integer> result = ms.sortedList();
+        assertEquals(Arrays.asList(1,2),result);
+    }
 }
