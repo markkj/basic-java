@@ -4,7 +4,7 @@ public class Main {
 //        String result = someEmployee.getFullName();
 //        System.out.println(result);
 
-        MyRange mr = new MyRange("(8,2]");
+        MyRange mr = new MyRange("(1,4]");
         System.out.println(mr.showResult());;
     }
 }

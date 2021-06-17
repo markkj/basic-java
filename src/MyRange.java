@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MyRange {
@@ -28,11 +27,15 @@ public class MyRange {
     }
 
     public int getFirstNumber(){
-        return Character.getNumericValue(this.input.charAt(1));
+        int firstNumber = Character.getNumericValue(this.input.charAt(1));
+        int startNumber = this.startWithInclude() ? firstNumber : firstNumber +1;
+        return startNumber;
     }
 
     public int getSecondNumber(){
-        return Character.getNumericValue(this.input.charAt(3));
+        int secondNumber = Character.getNumericValue(this.input.charAt(3));
+        int endNumber = this.endWithInclude() ? secondNumber +1: secondNumber;
+        return endNumber;
     }
 
 
@@ -53,8 +56,8 @@ public class MyRange {
         if(!(this.checkEndWithIncludeOrExclude() && this.checkStartWithIncludeOrExclude() && this.checkIntervalNumber())){
             return "Invalid Format";
         }
-        int startNumber = this.startWithInclude() ? this.getFirstNumber():this.getFirstNumber()+1;
-        int endNumber = this.endWithInclude() ? this.getSecondNumber()+1:this.getSecondNumber();
+        int startNumber = this.getFirstNumber();
+        int endNumber = this.getSecondNumber();
         if(startNumber >= endNumber){
             return "Invalid Format";
         }
