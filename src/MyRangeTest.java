@@ -8,10 +8,11 @@ class MyRangeTest {
     @Test
     @DisplayName("Check input start with '[' ")
     public void checkIsStartWithInclude(){
-        MyRange ms = new MyRange("[1,2]");
+        MyRange2 ms = new MyRange2("[1,2]");
         boolean result = ms.startWithInclude();
         assertTrue(result);
     }
+
 
 
 

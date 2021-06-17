@@ -3,8 +3,8 @@ import java.util.List;
 
 public class MyRange {
     /*
-    * Input between [0,9]
-    * */
+     * Input between [0,9]
+     * */
     String input;
 
     public MyRange(String input){
