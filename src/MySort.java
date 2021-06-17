@@ -12,6 +12,6 @@ public class MySort {
         if(this.input.size() <= 1)
             return this.input;
 
-        return new ArrayList<>();
+        return this.input;
     }
 }
