@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        Employee emp = new Employee();
-        String result = emp.getFullName();
+        Employee someEmployee = new Employee();
+        String result = someEmployee.getFullName();
         System.out.println(result);
     }
 }
