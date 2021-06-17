@@ -53,21 +53,23 @@ public class MyRange {
     }
 
     public boolean checkIntervalNumber(){
-        if(this.input.indexOf(",") != 2){
-            return false;
+        if(this.input.length() == 5){
+
+            return true;
         }
-        return true;
+
+        return false;
 
     }
 
 
     public String showResult(){
-        if(!(this.checkEndWithIncludeOrExclude() && this.checkStartWithIncludeOrExclude()) && this.checkIntervalNumber()){
+        if(!(this.checkEndWithIncludeOrExclude() && this.checkStartWithIncludeOrExclude() && this.checkIntervalNumber())){
             return "Invalid Format";
         }
         int startNumber = this.startWithInclude() ? this.getFirstNumber():this.getFirstNumber()+1;
         int endNumber = this.endWithInclude() ? this.getSecondNumber()+1:this.getSecondNumber();
-        this.checkIntervalNumber();
+
         List<String> result = new ArrayList<>();
         for (int i = startNumber; i < endNumber; i++) {
             result.add(Integer.toString(i));
