@@ -37,39 +37,27 @@ public class MyRange {
 
 
     public boolean checkStartWithIncludeOrExclude(){
+        return this.startWithInclude() || this.startWithExclude();
 
-        if(this.startWithInclude() || this.startWithExclude()){
-            return true;
-        }
-        return false;
     }
 
     public boolean checkEndWithIncludeOrExclude(){
-
-        if(this.endWithExclude() || this.endWithInclude()){
-            return true;
-        }
-        return false;
+        return this.endWithExclude() || this.endWithInclude();
     }
 
     public boolean checkIntervalNumber(){
-        if(this.input.length() == 5){
-
-            return true;
-        }
-
-        return false;
+        return this.input.length() == 5;
 
     }
-
-
     public String showResult(){
         if(!(this.checkEndWithIncludeOrExclude() && this.checkStartWithIncludeOrExclude() && this.checkIntervalNumber())){
             return "Invalid Format";
         }
         int startNumber = this.startWithInclude() ? this.getFirstNumber():this.getFirstNumber()+1;
         int endNumber = this.endWithInclude() ? this.getSecondNumber()+1:this.getSecondNumber();
-
+        if(startNumber >= endNumber){
+            return "Invalid Format";
+        }
         List<String> result = new ArrayList<>();
         for (int i = startNumber; i < endNumber; i++) {
             result.add(Integer.toString(i));
