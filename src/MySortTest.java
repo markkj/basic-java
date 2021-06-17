@@ -54,4 +54,22 @@ class MySortTest {
         List<Integer> result = ms.sortedList();
         assertEquals(Arrays.asList(1,2,3),result);
     }
+
+    @Test
+    @DisplayName("Test Sorting with without sorted list have 3 element")
+    public void testSortingWithThreeElementWithoutSorted(){
+        List<Integer> input = Arrays.asList(2,1,3);
+        MySort ms = new MySort(input);
+        List<Integer> result = ms.sortedList();
+        assertEquals(Arrays.asList(1,2,3),result);
+    }
+
+    @Test
+    @DisplayName("Test Sorting with without sorted list have 3 element should")
+    public void testSortingWithThreeElementWithoutSorted2(){
+        List<Integer> input = Arrays.asList(1,3,2);
+        MySort ms = new MySort(input);
+        List<Integer> result = ms.sortedList();
+        assertEquals(Arrays.asList(1,2,3),result);
+    }
 }
