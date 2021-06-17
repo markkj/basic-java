@@ -14,7 +14,11 @@ public class MyRange2 {
         return this.input.startsWith("(");
     }
 
-    public boolean endWithExclude() {
+    public boolean endWithInclude() {
         return this.input.endsWith("]");
+    }
+
+    public boolean endWithExclude() {
+        return this.input.endsWith(")");
     }
 }
