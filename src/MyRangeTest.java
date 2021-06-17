@@ -21,6 +21,13 @@ class MyRangeTest {
         assertTrue(result);
     }
 
+    @Test
+    @DisplayName("Check input end with ']' ")
+    public void checkIsEndWithInclude(){
+        MyRange2 ms = new MyRange2("(1,2]");
+        boolean result = ms.endWithExclude();
+        assertTrue(result);
+    }
 
 
 
