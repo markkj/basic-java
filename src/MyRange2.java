@@ -21,4 +21,11 @@ public class MyRange2 {
     public boolean endWithExclude() {
         return this.input.endsWith(")");
     }
+
+    public int getFirstNumber() {
+        int firstNumber = Character.getNumericValue(this.input.charAt(1));
+        firstNumber = startWithInclude() ? firstNumber:firstNumber+1;
+        return firstNumber;
+
+    }
 }

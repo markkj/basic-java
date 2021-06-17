@@ -37,5 +37,14 @@ class MyRangeTest {
         assertTrue(result);
     }
 
+    @Test
+    @DisplayName("Check first number if input start with '[' ")
+    public void checkFirstNumberIfStartWithInclude(){
+        MyRange2 ms = new MyRange2("[1,2)");
+        int result = ms.getFirstNumber();
+        assertEquals(1,result);
+    }
+
+
 
 }
