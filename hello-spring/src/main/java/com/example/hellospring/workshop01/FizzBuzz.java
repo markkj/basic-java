@@ -9,6 +9,8 @@ public class FizzBuzz {
     public String getResult() {
         if("3".equals(this.input)){
             return "Fizz";
+        }else if("5".equals(this.input)){
+            return "Buzz";
         }
         return this.input;
     }
