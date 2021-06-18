@@ -94,4 +94,12 @@ class FizzBuzzTest {
         String result = fz.getResult();
         assertEquals("11",result);
     }
+
+    @Test
+    @DisplayName(" 12 -> Fizz")
+    public void testcase12(){
+        FizzBuzz fz = new FizzBuzz("12");
+        String result = fz.getResult();
+        assertEquals("Fizz",result);
+    }
 }
