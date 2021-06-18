@@ -7,7 +7,9 @@ public class FizzBuzz {
     }
 
     public String getResult() {
-        if(Integer.valueOf(this.input)%3==0){
+        if (Integer.valueOf(this.input)%3==0 && Integer.valueOf(this.input)%5==0){
+            return "FizzBuzz";
+        }else if(Integer.valueOf(this.input)%3==0){
             return "Fizz";
         }else if(Integer.valueOf(this.input)%5==0){
             return "Buzz";
