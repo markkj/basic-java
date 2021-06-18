@@ -118,4 +118,6 @@ class FizzBuzzTest {
         String result = fz.getResult();
         assertEquals("FizzBuzz",result);
     }
+
+
 }

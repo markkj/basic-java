@@ -1,19 +1,28 @@
 package com.example.hellospring.workshop01;
 
-public class FizzBuzz {
+public class FizzBuzz{
     String input;
+
     public FizzBuzz(String s) {
         this.input = s;
     }
 
     public String getResult() {
-        if (Integer.valueOf(this.input)%3==0 && Integer.valueOf(this.input)%5==0){
-            return "FizzBuzz";
-        }else if(Integer.valueOf(this.input)%3==0){
-            return "Fizz";
-        }else if(Integer.valueOf(this.input)%5==0){
-            return "Buzz";
+        Say[] says = new Say[]{
+                new SayFizzBuzz(),
+                new SayBuzz(),
+                new SayFizz(),
+                new SayKBTG(),
+        };
+        for(Say say:says){
+            if(say.check(this.input)){
+                return say.getResult();
+            }
         }
+
+
         return this.input;
     }
 }
+
+
