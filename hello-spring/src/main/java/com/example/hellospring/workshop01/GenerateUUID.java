@@ -4,17 +4,28 @@ import java.util.Random;
 
 public class GenerateUUID{
 
-    public int randomNumber;
+    public RandomInterface Random;
 
 
-    public void setRandomNumber(int random) {
-        this.randomNumber = random;
+    public void setRandomNumber(RandomInterface random) {
+        this.Random = random;
     }
 
 
     public String getID(String name) {
-        String id = "XYZ" + name + randomNumber;
+        String id = "XYZ" + name + Random.nextInt(10);
         return id;
     }
 }
 
+interface RandomInterface{
+    int nextInt(int bound);
+}
+
+class Random4 implements RandomInterface{
+
+    @Override
+    public int nextInt(int bound) {
+        return 4;
+    }
+}

@@ -9,7 +9,7 @@ class GenerateUUIDTest {
     @Test
     public void shouldGetUUID(){
         GenerateUUID uuid = new GenerateUUID();
-        uuid.setRandomNumber(4);
+        uuid.setRandomNumber(new Random4());
         String result = uuid.getID("Khajohnyos");
         assertEquals("XYZKhajohnyos4",result);
     }
