@@ -9,7 +9,7 @@ public class FizzBuzz {
     public String getResult() {
         if(Integer.valueOf(this.input)%3==0){
             return "Fizz";
-        }else if("5".equals(this.input)){
+        }else if(Integer.valueOf(this.input)%5==0){
             return "Buzz";
         }
         return this.input;
