@@ -9,6 +9,7 @@ public class DemoExtend {
 
 
 abstract class Report {
+
     abstract void generateHeader();
     abstract void generateBody();
     abstract void generateFooter();
