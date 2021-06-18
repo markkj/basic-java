@@ -22,4 +22,12 @@ class FizzBuzzTest {
         String result = fz.getResult();
         assertEquals("2",result);
     }
+
+    @Test
+    @DisplayName(" 3 -> Fizz")
+    public void testcase03(){
+        FizzBuzz fz = new FizzBuzz("3");
+        String result = fz.getResult();
+        assertEquals("Fizz",result);
+    }
 }
