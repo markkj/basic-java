@@ -17,12 +17,12 @@ public class TennisGame3 {
                 return "Love";
             case 1:
                 return "Fifteen";
-            case 3:
+            case 2:
                 return "Thirty";
-            case 4:
+            case 3:
                 return "Forty";
             default:
-                throw new RuntimeException("Point is more than 4 !!");
+                throw new RuntimeException("Point is more than 3 !!");
         }
     }
 
@@ -30,10 +30,15 @@ public class TennisGame3 {
         String s;
         boolean isBothPlayerPointLessThan4 = playerOne.getPoint() < 4 && playerTwo.getPoint() < 4;
         boolean isBothPlayerSumPointNotEqual6 = !(playerOne.getPoint() + playerTwo.getPoint() == 6);
+
         if (isBothPlayerPointLessThan4 && isBothPlayerSumPointNotEqual6) {
-            String[] p = new String[]{"Love", "Fifteen", "Thirty", "Forty"};
-            s = p[playerOne.getPoint()];
-            return (playerOne.getPoint() == playerTwo.getPoint()) ? s + "-All" : s + "-" + p[playerTwo.getPoint()];
+            boolean isPlayerDeuce = playerOne.getPoint() == playerTwo.getPoint();
+            if(isPlayerDeuce){
+                return checkPointState(playerOne.getPoint()) + "-All";
+            }
+            else{
+                return checkPointState(playerOne.getPoint()) + "-" + checkPointState(playerTwo.getPoint());
+            }
         } else {
             if (playerOne.getPoint() == playerTwo.getPoint())
                 return "Deuce";
