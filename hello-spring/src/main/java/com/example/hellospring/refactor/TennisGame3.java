@@ -2,15 +2,15 @@ package com.example.hellospring.refactor;
 
 public class TennisGame3 {
 
-    private int playerTwoPoint;
-    private int playerOnePoint;
-    private String playerOneName;
-    private String playerTwoName;
+    private Player playerOne;
+    private Player playerTwo;
+
 
     public TennisGame3(String playerOneName, String playerTwoName) {
-        this.playerOneName = playerOneName;
-        this.playerTwoName = playerTwoName;
+        this.playerOne = new Player(playerOneName);
+        this.playerTwo = new Player(playerTwoName);
     }
+
 
     public String getScore() {
         String s;
