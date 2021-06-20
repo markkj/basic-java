@@ -1,10 +1,22 @@
 package com.example.hellospring.refactor;
 
 public class Player {
-    private String Name;
-    private int Point;
+    private String name;
+    private int point;
 
-    public Player(String Name) {
-        this.Name = Name;
+    public Player(String name) {
+        this.name = name;
+    }
+
+    public int getPoint(){
+        return point;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void addPoint(){
+        point += 1;
     }
 }

@@ -14,23 +14,23 @@ public class TennisGame3 {
 
     public String getScore() {
         String s;
-        if (playerOnePoint < 4 && playerTwoPoint < 4 && !(playerOnePoint + playerTwoPoint == 6)) {
+        if (playerOne.getPoint() < 4 && playerTwo.getPoint() < 4 && !(playerOne.getPoint() + playerTwo.getPoint() == 6)) {
             String[] p = new String[]{"Love", "Fifteen", "Thirty", "Forty"};
-            s = p[playerOnePoint];
-            return (playerOnePoint == playerTwoPoint) ? s + "-All" : s + "-" + p[playerTwoPoint];
+            s = p[playerOne.getPoint()];
+            return (playerOne.getPoint() == playerTwo.getPoint()) ? s + "-All" : s + "-" + p[playerTwo.getPoint()];
         } else {
-            if (playerOnePoint == playerTwoPoint)
+            if (playerOne.getPoint() == playerTwo.getPoint())
                 return "Deuce";
-            s = playerOnePoint > playerTwoPoint ? playerOneName : playerTwoName;
-            return ((playerOnePoint - playerTwoPoint)*(playerOnePoint - playerTwoPoint) == 1) ? "Advantage " + s : "Win for " + s;
+            s = playerOne.getPoint() > playerTwo.getPoint() ? playerOne.getName() : playerTwo.getName();
+            return ((playerOne.getPoint() - playerTwo.getPoint())*(playerOne.getPoint() - playerTwo.getPoint()) == 1) ? "Advantage " + s : "Win for " + s;
         }
     }
 
     public void wonPoint(String playerName) {
-        if (playerName == "player1")
-            this.playerOnePoint += 1;
+        if (playerName == playerOne.getName())
+            this.playerOne.addPoint();
         else
-            this.playerTwoPoint += 1;
+            this.playerTwo.addPoint();
 
     }
 
