@@ -30,7 +30,7 @@ public class TennisGame3 {
         return checkPointState(playerOne.getPoint()) + "-All";
     }
 
-    public String printRefereeCallNormal(){
+    public String printRefereeCallOnGame4(){
         return checkPointState(playerOne.getPoint()) + "-" + checkPointState(playerTwo.getPoint());
     }
 
@@ -57,7 +57,7 @@ public class TennisGame3 {
                 return printRefereeCallAll();
             }
             else{
-                return printRefereeCallNormal();
+                return printRefereeCallOnGame4();
             }
 
         } else {
