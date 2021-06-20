@@ -27,12 +27,13 @@ public class TennisGame3 {
     }
 
     public String getScore() {
-        String s;
+
         boolean isBothPlayerPointLessThan4 = playerOne.getPoint() < 4 && playerTwo.getPoint() < 4;
         boolean isBothPlayerSumPointNotEqual6 = !(playerOne.getPoint() + playerTwo.getPoint() == 6);
+        boolean isPlayerDeuce = playerOne.getPoint() == playerTwo.getPoint();
 
         if (isBothPlayerPointLessThan4 && isBothPlayerSumPointNotEqual6) {
-            boolean isPlayerDeuce = playerOne.getPoint() == playerTwo.getPoint();
+
             if(isPlayerDeuce){
                 return checkPointState(playerOne.getPoint()) + "-All";
             }
@@ -40,10 +41,11 @@ public class TennisGame3 {
                 return checkPointState(playerOne.getPoint()) + "-" + checkPointState(playerTwo.getPoint());
             }
         } else {
-            if (playerOne.getPoint() == playerTwo.getPoint())
+            if (isPlayerDeuce)
                 return "Deuce";
-            s = playerOne.getPoint() > playerTwo.getPoint() ? playerOne.getName() : playerTwo.getName();
-            return ((playerOne.getPoint() - playerTwo.getPoint())*(playerOne.getPoint() - playerTwo.getPoint()) == 1) ? "Advantage " + s : "Win for " + s;
+            String nameOfLeading = playerOne.getPoint() > playerTwo.getPoint() ? playerOne.getName() : playerTwo.getName();
+
+            return ((playerOne.getPoint() - playerTwo.getPoint())*(playerOne.getPoint() - playerTwo.getPoint()) == 1) ? "Advantage " + nameOfLeading : "Win for " + nameOfLeading;
         }
     }
 
