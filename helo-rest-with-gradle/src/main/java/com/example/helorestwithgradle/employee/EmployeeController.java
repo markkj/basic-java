@@ -9,13 +9,10 @@ import java.util.Random;
 @RestController
 public class EmployeeController {
 
-    @Bean
-    public Random CreateNewRandom(){
-        return new Random();
-    }
+
 
     @Autowired
-    private Random randomNumberEmployee;
+    private RandomNumber randomNumberEmployee;
 
     @GetMapping("/employee/{id}")
     public EmployeeResponse getEmployeeByID(@PathVariable String id){
