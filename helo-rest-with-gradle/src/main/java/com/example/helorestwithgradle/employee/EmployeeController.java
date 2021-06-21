@@ -43,4 +43,10 @@ public class EmployeeController {
         int number = randomNumberEmployee.nextInt(10);
         return new EmployeeResponse(_id,"Khajohnyos"+number,"Mark");
     }
+
+    @PostMapping("/employee")
+    public EmployeeResponse createEmployee(@RequestBody EmployeeRequest request){
+        return new EmployeeResponse(999,"Khajohnyos","Mark");
+
+    }
 }
