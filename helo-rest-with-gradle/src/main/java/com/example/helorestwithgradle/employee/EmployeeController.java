@@ -1,12 +1,18 @@
 package com.example.helorestwithgradle.employee;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Random;
 
 @RestController
 public class EmployeeController {
+
+    @Bean
+    public Random CreateNewRandom(){
+        return new Random();
+    }
 
     @Autowired
     private Random randomNumberEmployee;
