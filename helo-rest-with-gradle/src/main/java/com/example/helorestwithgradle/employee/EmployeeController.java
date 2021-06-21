@@ -46,7 +46,7 @@ public class EmployeeController {
 
     @PostMapping("/employee")
     public EmployeeResponse createEmployee(@RequestBody EmployeeRequest request){
-        return new EmployeeResponse(999,"Khajohnyos","Mark");
+        return new EmployeeResponse(999,request.getFname(),request.getLname());
 
     }
 }

@@ -1,11 +1,12 @@
 package com.example.helorestwithgradle;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-public class HeloRestWithGradleApplication {
+public class HeloRestWithGradleApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext ctx = SpringApplication.run(HeloRestWithGradleApplication.class, args);
@@ -20,4 +21,9 @@ public class HeloRestWithGradleApplication {
         System.out.println("Total =  " + count);
     }
 
+    @Override
+    public void run(String... args) throws Exception {
+        System.out.println("Start ....");
+        System.out.println("Stop ....");
+    }
 }
