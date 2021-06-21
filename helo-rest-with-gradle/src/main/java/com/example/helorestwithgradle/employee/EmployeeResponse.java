@@ -1,5 +1,7 @@
 package com.example.helorestwithgradle.employee;
 
+import java.util.Objects;
+
 public class EmployeeResponse{
 	private int id;
 	private String fname;
@@ -43,5 +45,18 @@ public class EmployeeResponse{
 				", fname='" + fname + '\'' +
 				", lname='" + lname + '\'' +
 				'}';
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		EmployeeResponse that = (EmployeeResponse) o;
+		return id == that.id && fname.equals(that.fname) && lname.equals(that.lname);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, fname, lname);
 	}
 }

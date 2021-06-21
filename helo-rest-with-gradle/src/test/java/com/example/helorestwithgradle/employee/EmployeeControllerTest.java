@@ -18,7 +18,8 @@ class EmployeeControllerTest {
     public void callApiWithPathVariable(){
         EmployeeResponse expectedResponse = new EmployeeResponse(123,"Khajohnyos","Mark");
         EmployeeResponse res =  restTemplate.getForObject("/employee/123",EmployeeResponse.class);
-        assertEquals(expectedResponse.toString(),res.toString());
+        // assertEquals(expectedResponse.toString(),res.toString()); // shouldn't
+        assertEquals(expectedResponse,res);
 
     }
 
@@ -26,7 +27,8 @@ class EmployeeControllerTest {
     public void callApiWithRequestParams(){
         EmployeeResponse expectedResponse = new EmployeeResponse(123,"Khajohnyos","Mark");
         EmployeeResponse res =  restTemplate.getForObject("/employee?id=123",EmployeeResponse.class);
-        assertEquals(expectedResponse.toString(),res.toString());
+        // assertEquals(expectedResponse.toString(),res.toString()); // shouldn't
+        assertEquals(expectedResponse,res);
 
     }
 }
