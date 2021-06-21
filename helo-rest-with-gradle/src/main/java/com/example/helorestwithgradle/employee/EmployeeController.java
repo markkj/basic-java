@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class EmployeeController {
 
     @GetMapping("/employee/{id}")
-    @ExceptionHandler()
     public EmployeeResponse getEmployeeByID(@PathVariable String id){
         int _id = 0;
         try{
