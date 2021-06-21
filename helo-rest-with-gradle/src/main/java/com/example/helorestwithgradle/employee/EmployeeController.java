@@ -11,10 +11,9 @@ public class EmployeeController {
     @Autowired
     private RandomNumberEmployee randomNumberEmployee;
 
-    public RandomNumberEmployee setRandomNumber(RandomNumberEmployee randomNumber) {
-        this.randomNumberEmployee = randomNumber;
-        return randomNumberEmployee;
-    }
+
+
+
     @GetMapping("/employee/{id}")
     public EmployeeResponse getEmployeeByID(@PathVariable String id){
         int _id = 0;
@@ -25,7 +24,7 @@ public class EmployeeController {
             _id = 0;
         }
 
-        int number = setRandomNumber(new RandNumber5()).nextInt(10);
+        int number = randomNumberEmployee.nextInt(10);
         return new EmployeeResponse(_id,"Khajohnyos"+number,"Mark");
     }
 
@@ -38,7 +37,7 @@ public class EmployeeController {
             //Can't Convert;
             _id = 0;
         }
-        int number = setRandomNumber(new RandNumber5()).nextInt(10);
+        int number = randomNumberEmployee.nextInt(10);
         return new EmployeeResponse(_id,"Khajohnyos"+number,"Mark");
     }
 }
