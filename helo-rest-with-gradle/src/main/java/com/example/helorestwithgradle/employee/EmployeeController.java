@@ -2,11 +2,12 @@ package com.example.helorestwithgradle.employee;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Random;
+
 @RestController
 public class EmployeeController {
 
     @GetMapping("/employee/{id}")
-
     public EmployeeResponse getEmployeeByID(@PathVariable String id){
         int _id = 0;
         try{
@@ -15,8 +16,9 @@ public class EmployeeController {
             //Can't Convert;
             _id = 0;
         }
-
-        return new EmployeeResponse(_id,"Khajohnyos","Mark");
+        Random random = new Random();
+        int number = random.nextInt(10);
+        return new EmployeeResponse(_id,"Khajohnyos"+number,"Mark");
     }
 
     @GetMapping("/employee")
