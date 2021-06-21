@@ -1,5 +1,6 @@
 package com.example.helorestwithgradle.employee;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Random;
@@ -7,6 +8,12 @@ import java.util.Random;
 @RestController
 public class EmployeeController {
 
+    @Autowired
+    private RandomNumberEmployee randomNumberEmployee;
+
+    public void setRandomNumber(RandomNumberEmployee randomNumber) {
+        this.randomNumberEmployee = randomNumber;
+    }
     @GetMapping("/employee/{id}")
     public EmployeeResponse getEmployeeByID(@PathVariable String id){
         int _id = 0;
@@ -16,8 +23,8 @@ public class EmployeeController {
             //Can't Convert;
             _id = 0;
         }
-        Random random = new Random();
-        int number = random.nextInt(10);
+
+        int number = this.randomNumberEmployee.nextInt(10);
         return new EmployeeResponse(_id,"Khajohnyos"+number,"Mark");
     }
 

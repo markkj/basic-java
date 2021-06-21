@@ -16,7 +16,7 @@ class EmployeeControllerTest {
 
     @Test
     public void callApiWithPathVariable(){
-        EmployeeResponse expectedResponse = new EmployeeResponse(123,"Khajohnyos","Mark");
+        EmployeeResponse expectedResponse = new EmployeeResponse(123,"Khajohnyos5","Mark");
         EmployeeResponse res =  restTemplate.getForObject("/employee/123",EmployeeResponse.class);
         // assertEquals(expectedResponse.toString(),res.toString()); // shouldn't
         assertEquals(expectedResponse,res);
