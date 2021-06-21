@@ -9,9 +9,4 @@ public class RandomNumberEmployee extends Random {
 
 }
 
-class RandNumber5 extends RandomNumberEmployee{
-    @Override
-    public int nextInt(int bound){
-        return 5;
-    }
-}
+
