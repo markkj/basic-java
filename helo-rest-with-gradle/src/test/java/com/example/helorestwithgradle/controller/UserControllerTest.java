@@ -44,17 +44,16 @@ class UserControllerTest {
 
     }
 
-//    @Test
-//    public void testGetUserByID(){
-//        //Setup
-//        UserList userList = new UserList();
-//        User expectUser = userList.getUsers().get(0);
-//
-//        //Action
-//        User response = restTemplate.getForObject("/user/1",User.class);
-//
-//        //Check
-//        assertEquals(expectUser,response);
-//
-//    }
+    @Test
+    public void testGetUserByID(){
+        //Setup
+        User expectUser = expectUsersList.getUsers().get(0);
+
+        //Action
+        User response = restTemplate.getForObject("/user/1",User.class);
+
+        //Check
+        assertEquals(expectUser,response);
+
+    }
 }
