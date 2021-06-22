@@ -15,10 +15,15 @@ public class UserController {
     @Autowired
     private UserService service;
 
+    @Autowired
+    private UserList users = new UserList();
+
     @GetMapping("/users")
     public List<User> getUserList(){
-        UserList users = new UserList();
+
         service.mockupUsers(users);
         return users.getUsers();
     }
+
+
 }
