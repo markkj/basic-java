@@ -15,9 +15,9 @@ public class UserController {
 
     @GetMapping("/users")
     public UserList getUserList(){
-
         UserList users = new UserList();
-
+        UserService service = new UserService();
+        service.mockupUsers(users);
         return users;
     }
 }
