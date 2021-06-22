@@ -21,17 +21,35 @@ public class User{
 		this.company = company;
 	}
 
-	@Override
-	public String toString() {
-		return "User{" +
-				"id=" + id +
-				", name='" + name + '\'' +
-				", username='" + username + '\'' +
-				", email='" + email + '\'' +
-				", address=" + address +
-				", phone='" + phone + '\'' +
-				", website='" + website + '\'' +
-				", company=" + company +
-				'}';
+	public int getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public String getWebsite() {
+		return website;
+	}
+
+	public Company getCompany() {
+		return company;
 	}
 }

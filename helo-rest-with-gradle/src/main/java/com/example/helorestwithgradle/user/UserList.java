@@ -1,21 +1,26 @@
 package com.example.helorestwithgradle.user;
 
-import com.google.gson.Gson;
-import org.springframework.http.ResponseEntity;
+
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+;
 import java.util.List;
 import java.util.Objects;
 
-@Component
+
 public class UserList {
 
-    private List<User> users = new ArrayList<>();
+    private List<User> users;
 
-    public void addUser(User user){
+    public void addUser(User user) {
         users.add(user);
+    }
+
+    public UserList(){
+        users = new ArrayList<>();
+
     }
 
     @Override
@@ -30,7 +35,7 @@ public class UserList {
     public int hashCode() {
         return Objects.hash(users);
     }
-
+    @Bean
     public List<User> getUsers() {
         return users;
     }
