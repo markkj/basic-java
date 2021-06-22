@@ -34,16 +34,31 @@ class UserControllerTest {
 
         UserList expectUsersList = new UserList();
         service.mockupUsers(expectUsersList);
+        List<User> expectResponse = expectUsersList.getUsers();
 
         //Action
-        List<User> expectResponse = expectUsersList.getUsers();
         ResponseEntity<User[]> responseEntity =
                 restTemplate.getForEntity("/users", User[].class);
         User[] userArray = responseEntity.getBody();
         List<User> response = Arrays.asList(userArray);
-        //Check
 
+        //Check
         assertEquals(expectResponse,response);
+
+    }
+
+    @Test
+    public void testGetUserByID(){
+        //Setup
+        UserList userList = new UserList();
+        service.mockupUsers(userList);
+        User expectUser = userList.getUsers().get(0);
+
+        //Action
+        User response = restTemplate.getForObject("/user/1",User.class);
+
+        //Check
+        assertEquals(expectUser,response);
 
     }
 }
