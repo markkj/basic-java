@@ -20,8 +20,6 @@ public class UserController {
 
     @GetMapping("/users")
     public List<User> getUserList(){
-
-        service.mockupUsers(users);
         return users.getUsers();
     }
 

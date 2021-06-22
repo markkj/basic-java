@@ -6,10 +6,12 @@ import com.example.helorestwithgradle.user.UserList;
 import com.google.gson.Gson;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class UserService {
 
-    public void mockupUsers(UserList userList) {
+    public void mockupUsers(List<User> userList) {
         String[] jsonStringData = new String[]{
                 "{\n" +
                         "    \"id\": 1,\n" +
@@ -65,7 +67,7 @@ public class UserService {
                 jsonStringData) {
 
             User user = g.fromJson(data, User.class);
-            userList.addUsers(user);
+            userList.add(user);
         }
 
 
