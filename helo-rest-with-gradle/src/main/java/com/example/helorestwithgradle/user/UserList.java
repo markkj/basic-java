@@ -50,4 +50,8 @@ public class UserList {
     public void addUsers(User user){
         this.users.add(user);
     }
+
+    public User getUserID(int id) {
+        return users.get(id-1);
+    }
 }

@@ -47,7 +47,7 @@ class UserControllerTest {
     @Test
     public void testGetUserByID(){
         //Setup
-        User expectUser = expectUsersList.getUsers().get(0);
+        User expectUser = expectUsersList.getUserID(1);
 
         //Action
         User response = restTemplate.getForObject("/user/1",User.class);
