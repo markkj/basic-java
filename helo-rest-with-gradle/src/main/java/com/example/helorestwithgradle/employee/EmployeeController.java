@@ -10,40 +10,40 @@ import java.util.Random;
 public class EmployeeController {
 
 
-
     @Autowired
     private RandomNumber randomNumberEmployee;
 
     @GetMapping("/employee/{id}")
-    public EmployeeResponse getEmployeeByID(@PathVariable String id){
+    public EmployeeResponse getEmployeeByID(@PathVariable String id) {
         int _id = 0;
-        try{
+        try {
             _id = Integer.parseInt(id);
-        } catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             //Can't Convert;
             _id = 0;
         }
 
         int number = randomNumberEmployee.nextInt(10);
-        return new EmployeeResponse(_id,"Khajohnyos"+number,"Mark");
+        return new EmployeeResponse(_id, "Khajohnyos" + number, "Mark");
     }
 
     @GetMapping("/employee")
-    public EmployeeResponse getEmployeeByID2(@RequestParam String id){
+    public EmployeeResponse getEmployeeByID2(@RequestParam String id) {
         int _id = 0;
-        try{
+        try {
             _id = Integer.parseInt(id);
-        } catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             //Can't Convert;
             _id = 0;
         }
         int number = randomNumberEmployee.nextInt(10);
-        return new EmployeeResponse(_id,"Khajohnyos"+number,"Mark");
+        return new EmployeeResponse(_id, "Khajohnyos" + number, "Mark");
     }
 
     @PostMapping("/employee")
-    public EmployeeResponse createEmployee(@RequestBody EmployeeRequest request){
-        return new EmployeeResponse(999,request.getFname(),request.getLname());
+    public EmployeeResponse createEmployee(@RequestBody EmployeeRequest request) {
+        int number = randomNumberEmployee.nextInt(10);
+        return new EmployeeResponse(999, request.getFname() + number, request.getLname());
 
     }
 }

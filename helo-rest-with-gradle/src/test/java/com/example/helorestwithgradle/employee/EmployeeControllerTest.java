@@ -40,4 +40,20 @@ class EmployeeControllerTest {
         assertEquals(expectedResponse,res);
 
     }
+
+    @Test
+    public void callApiWithPostRequest(){
+        when(randomNumberEmployee.nextInt(10)).thenReturn(5);
+        EmployeeResponse expectedResponse = new EmployeeResponse(999,"Khajohnyos5","Mark");
+
+        EmployeeRequest employeeRequest = new EmployeeRequest();
+        employeeRequest.setFname("Khajohnyos");
+        employeeRequest.setLname("Mark");
+
+        EmployeeResponse res =  restTemplate.postForObject("/employee",employeeRequest,EmployeeResponse.class);
+        // assertEquals(expectedResponse.toString(),res.toString()); // shouldn't
+        assertEquals(expectedResponse,res);
+
+    }
+
 }
