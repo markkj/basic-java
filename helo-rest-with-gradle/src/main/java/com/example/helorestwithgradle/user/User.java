@@ -20,4 +20,18 @@ public class User{
 		this.website = website;
 		this.company = company;
 	}
+
+	@Override
+	public String toString() {
+		return "User{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", username='" + username + '\'' +
+				", email='" + email + '\'' +
+				", address=" + address +
+				", phone='" + phone + '\'' +
+				", website='" + website + '\'' +
+				", company=" + company +
+				'}';
+	}
 }
