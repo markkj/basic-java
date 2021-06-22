@@ -1,6 +1,6 @@
 package com.example.helorestwithgradle.controller;
 
-import com.example.helorestwithgradle.user.MockUser;
+import com.example.helorestwithgradle.user.UserList;
 import com.example.helorestwithgradle.user.User;
 import org.junit.jupiter.api.Test;
 
@@ -18,9 +18,8 @@ class UserControllerTest {
 
     @Test
     public void testGetAllUsers(){
-        MockUser ExpectUsers = new MockUser();
-        ResponseEntity<User[]> expectUsersList = ExpectUsers.getUsersList();
-        ResponseEntity<User[]> userList = restTemplate.getForObject("/users",ResponseEntity.class);
+        UserList expectUsersList = new UserList();
+        UserList userList = restTemplate.getForObject("/users",UserList.class);
         assertEquals(expectUsersList,userList);
     }
 }
