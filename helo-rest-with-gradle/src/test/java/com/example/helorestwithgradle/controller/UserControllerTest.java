@@ -26,7 +26,7 @@ class UserControllerTest {
     private TestRestTemplate restTemplate;
 
     @Autowired
-    UserList expectUsersList = new UserList();
+    private UserList expectUsersList;
 
     @Test
     public void testGetAllUsers(){
