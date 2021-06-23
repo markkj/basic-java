@@ -31,7 +31,7 @@ public class EmployeeService {
 
             return new EmployeeResponse(emp.getId(), emp.getFirstName() + number, emp.getLastName());
         }
-        return new EmployeeResponse();
+        throw new EmployeeNotFoundException("Employee Not Found");
     }
 
 
