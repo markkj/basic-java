@@ -18,7 +18,6 @@ public class EmployeeController {
     private EmployeeService service;
 
     @GetMapping("/employee/{id}")
-
     public EmployeeResponse getEmployeeByIDWithPathVariable(@PathVariable String id) {
         int _id = 0;
         try {
