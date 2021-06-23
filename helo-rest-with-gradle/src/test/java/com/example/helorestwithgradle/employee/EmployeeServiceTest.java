@@ -21,14 +21,11 @@ class EmployeeServiceTest {
 
     @Test
     public void foundEmployeeID1NotFound(){
-        when(randomNumber.nextInt(10)).thenReturn(5);
-
         when(repository.findById(100)).thenReturn(
                 Optional.empty()
         );
 
         EmployeeService service = new EmployeeService();
-        service.setRandom(randomNumber);
         service.setRepo(repository);
 
         EmployeeResponse result = service.findByID(100);

@@ -24,11 +24,11 @@ public class EmployeeService {
 
 
     public EmployeeResponse findByID(int id){
-        int number = randomNumberEmployee.nextInt(10);
 
         Optional<Employee> result = repository.findById(id); // Optional won't return null
         if(result.isPresent()){
             Employee emp = result.get();
+            int number = randomNumberEmployee.nextInt(10);
             return new EmployeeResponse(emp.getId(), emp.getFirstName() + number, emp.getLastName());
         }
         return new EmployeeResponse();
