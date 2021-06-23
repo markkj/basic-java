@@ -1,4 +1,4 @@
-package com.example.helorestwithgradle.employee;
+package com.example.helorestwithgradle.user;
 
 import com.example.helorestwithgradle.user.UserGateway;
 import com.example.helorestwithgradle.user.UserModel;
