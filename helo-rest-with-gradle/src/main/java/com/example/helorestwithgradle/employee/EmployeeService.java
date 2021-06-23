@@ -18,20 +18,20 @@ public class EmployeeService {
         this.randomNumberEmployee = randomNumber;
     }
 
-    public void setRepo(EmployeeRepository repository){
+    public void setRepo(EmployeeRepository repository) {
         this.repository = repository;
     }
 
 
-    public EmployeeResponse findByID(int id){
+    public EmployeeResponse findByID(int id) {
         int number = randomNumberEmployee.nextInt(10);
         Optional<Employee> result = repository.findById(id); // Optional won't return null
-        if(result.isPresent()){
+        if (result.isPresent()) {
             Employee emp = result.get();
 
             return new EmployeeResponse(emp.getId(), emp.getFirstName() + number, emp.getLastName());
         }
-        throw new EmployeeNotFoundException("Employee Not Found");
+        throw new EmployeeNotFoundException("Employee ID " + id + " not found");
     }
 
 

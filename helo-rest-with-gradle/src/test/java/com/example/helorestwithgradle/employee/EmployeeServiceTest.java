@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.util.Optional;
 
@@ -31,13 +32,13 @@ class EmployeeServiceTest {
                 Optional.empty()
         );
 
+
         EmployeeService service = new EmployeeService();
         service.setRandom(randomNumber);
         service.setRepo(repository);
-        EmployeeResponse result = service.findByID(100);
-        assertEquals(0, result.getId());
-        assertNull(result.getFname());
-        assertNull(result.getLname());
+        Exception exception = assertThrows(EmployeeNotFoundException.class, () -> service.findByID(100));
+        assertEquals("Employee ID 100 not found",exception.getMessage());
+
 
     }
 
