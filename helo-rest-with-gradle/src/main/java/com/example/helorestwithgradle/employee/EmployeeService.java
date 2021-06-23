@@ -13,6 +13,16 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepository repository;
 
+
+    public void setRandom(RandomNumber randomNumber) {
+        this.randomNumberEmployee = randomNumber;
+    }
+
+    public void setRepo(EmployeeRepository repository){
+        this.repository = repository;
+    }
+
+
     public EmployeeResponse findByID(int id){
         int number = randomNumberEmployee.nextInt(10);
 
@@ -23,4 +33,6 @@ public class EmployeeService {
         }
         return new EmployeeResponse();
     }
+
+
 }
