@@ -17,7 +17,7 @@ public class UserList {
 
     private List<User> users;
 
-    @Autowired
+
     private UserService userService = new UserService();
 
     public UserList() {
