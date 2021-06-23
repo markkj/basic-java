@@ -6,7 +6,6 @@ import javax.persistence.*;
 //@Table(name = "employee") //mapping table
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String firstName;
@@ -16,6 +15,12 @@ public class Employee {
     }
 
     public Employee(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public Employee(int id, String firstName, String lastName) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
     }

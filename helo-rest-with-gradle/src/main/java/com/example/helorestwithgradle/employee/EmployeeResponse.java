@@ -41,24 +41,24 @@ public class EmployeeResponse{
 	}
 
 	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		EmployeeResponse that = (EmployeeResponse) o;
+		return id == that.id && Objects.equals(fname, that.fname) && Objects.equals(lname, that.lname);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, fname, lname);
+	}
+
+	@Override
 	public String toString() {
 		return "EmployeeResponse{" +
 				"id=" + id +
 				", fname='" + fname + '\'' +
 				", lname='" + lname + '\'' +
 				'}';
-	}
-
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
-		EmployeeResponse that = (EmployeeResponse) o;
-		return id == that.id && fname.equals(that.fname) && lname.equals(that.lname);
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(id, fname, lname);
 	}
 }

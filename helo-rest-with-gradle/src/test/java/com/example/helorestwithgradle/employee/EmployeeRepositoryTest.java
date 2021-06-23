@@ -17,7 +17,7 @@ class EmployeeRepositoryTest {
 
     @Test
     public void foundWithID1(){
-        Employee expectEmp = new Employee("Mark from DB","Bk from DB");
+        Employee expectEmp = new Employee(1,"Mark from DB","Bk from DB");
         repository.save(expectEmp);
 
         Employee employee1 = repository.getById(1);

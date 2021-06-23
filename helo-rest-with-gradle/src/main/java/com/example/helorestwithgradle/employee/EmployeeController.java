@@ -32,10 +32,12 @@ public class EmployeeController {
                     HttpStatus.BAD_REQUEST, "Invalid ID", e);
         }
 
+        int number = randomNumberEmployee.nextInt(10);
+
         Optional<Employee> result = repository.findById(_id); // Optional won't return null
         if(result.isPresent()){
             Employee emp = result.get();
-            return new EmployeeResponse(emp.getId(), emp.getFirstName(), emp.getLastName());
+            return new EmployeeResponse(emp.getId(), emp.getFirstName() + number, emp.getLastName());
         }
         return new EmployeeResponse();
     }
@@ -52,20 +54,22 @@ public class EmployeeController {
                     HttpStatus.BAD_REQUEST, "Invalid ID", e);
         }
 
-        try {
-            Employee emp = repository.getById(_id);
-            return new EmployeeResponse(emp.getId(), emp.getFirstName(), emp.getLastName());
-        } catch (EntityNotFoundException e) {
-            throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, "ID not found", e);
+        int number = randomNumberEmployee.nextInt(10);
+
+        Optional<Employee> result = repository.findById(_id); // Optional won't return null
+        if(result.isPresent()){
+            Employee emp = result.get();
+            return new EmployeeResponse(emp.getId(), emp.getFirstName() + number, emp.getLastName());
         }
+        return new EmployeeResponse();
     }
 
     @PostMapping("/employee")
     public EmployeeResponse createEmployee(@RequestBody EmployeeRequest request) {
         Employee emp = new Employee(request.getFname(),request.getLname());
         Employee savedEmp = repository.save(emp);
-        return new EmployeeResponse(savedEmp.getId(),savedEmp.getFirstName(),savedEmp.getLastName());
+        int number = randomNumberEmployee.nextInt(10);
+        return new EmployeeResponse(savedEmp.getId(),savedEmp.getFirstName()+number,savedEmp.getLastName());
 
     }
 }
