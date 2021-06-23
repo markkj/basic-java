@@ -1,5 +1,6 @@
 package com.example.helorestwithgradle.employee;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -19,6 +20,11 @@ class EmployeeServiceTest {
     @Mock
     private EmployeeRepository repository;
 
+    @BeforeEach
+    public void setUp(){
+        when(randomNumber.nextInt(10)).thenReturn(5);
+
+    }
     @Test
     public void foundEmployeeID1NotFound(){
         when(repository.findById(100)).thenReturn(
@@ -26,8 +32,8 @@ class EmployeeServiceTest {
         );
 
         EmployeeService service = new EmployeeService();
+        service.setRandom(randomNumber);
         service.setRepo(repository);
-
         EmployeeResponse result = service.findByID(100);
         assertEquals(0, result.getId());
         assertNull(result.getFname());
@@ -37,7 +43,6 @@ class EmployeeServiceTest {
 
     @Test
     public void foundEmployeeID1Found(){
-        when(randomNumber.nextInt(10)).thenReturn(5);
         Employee mock = new Employee(1,"Service FName","Service LName");
         when(repository.findById(1)).thenReturn(
                 Optional.of(mock)
