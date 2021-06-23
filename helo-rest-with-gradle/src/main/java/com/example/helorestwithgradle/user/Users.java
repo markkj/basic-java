@@ -1,8 +1,11 @@
 package com.example.helorestwithgradle.user;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.*;
 
 public class Users {
+    @JsonProperty("UserModel")
     private List<UserModel> users;
 
     public List<UserModel> getUsers() {
