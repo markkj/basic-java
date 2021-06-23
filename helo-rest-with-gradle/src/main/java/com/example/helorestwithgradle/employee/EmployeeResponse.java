@@ -7,6 +7,8 @@ public class EmployeeResponse{
 	private String fname;
 	private String lname;
 
+	public EmployeeResponse() {
+	}
 
 	public EmployeeResponse(int id, String fname, String lname) {
 		this.id = id;

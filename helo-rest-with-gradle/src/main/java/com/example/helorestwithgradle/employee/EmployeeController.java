@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.Optional;
 import java.util.Random;
 
 @RestController
@@ -31,13 +32,12 @@ public class EmployeeController {
                     HttpStatus.BAD_REQUEST, "Invalid ID", e);
         }
 
-        try {
-            Employee emp = repository.getById(_id);
+        Optional<Employee> result = repository.findById(_id); // Optional won't return null
+        if(result.isPresent()){
+            Employee emp = result.get();
             return new EmployeeResponse(emp.getId(), emp.getFirstName(), emp.getLastName());
-        } catch (EntityNotFoundException e) {
-            throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, "ID not found", e);
         }
+        return new EmployeeResponse();
     }
 
     @GetMapping("/employee")
