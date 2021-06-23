@@ -1,6 +1,7 @@
 package com.example.helorestwithgradle.employee;
 
 import com.example.helorestwithgradle.user.UserGateway;
+import com.example.helorestwithgradle.user.UserModel;
 import com.example.helorestwithgradle.user.Users;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,12 @@ public class UserGatewayTest {
     public void testCallUserGateway(){
         Users users = userGateway.getAllUsers();
         assertEquals(10,users.getUsers().size());
+    }
+
+    @Test
+    public void testCallUserGatewayByID(){
+        UserModel user = userGateway.getUserByID(1);
+        assertEquals(1,user.getId());
     }
 
 }

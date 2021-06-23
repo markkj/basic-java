@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Arrays;
+
 @Component
 public class UserGateway {
 
@@ -11,9 +13,15 @@ public class UserGateway {
     RestTemplate restTemplate;
 
     public Users getAllUsers(){
-        Users users = restTemplate.getForObject("https://jsonplaceholder.typicode.com/users",Users.class);
-        System.out.println(users);
+        UserModel[] result = restTemplate.getForObject("https://jsonplaceholder.typicode.com/users",UserModel[].class);
+        Users users = new Users();
+        users.setUsers(Arrays.asList(result));
         return users;
+    }
+
+    public UserModel getUserByID(int id){
+        UserModel result = restTemplate.getForObject("https://jsonplaceholder.typicode.com/users/"+id,UserModel.class);
+        return result;
     }
 
 
