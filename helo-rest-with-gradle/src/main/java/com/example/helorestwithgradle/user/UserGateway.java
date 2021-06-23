@@ -16,7 +16,6 @@ public class UserGateway {
         UserModel[] result = restTemplate.getForObject("https://jsonplaceholder.typicode.com/users",UserModel[].class);
         Users users = new Users();
         users.setUsers(Arrays.asList(result));
-
         return users;
     }
 
