@@ -21,7 +21,7 @@ public class UserController {
     private UserService service;
 
     @Autowired
-    private UserList users = new UserList();
+    private UserList users;
 
     @GetMapping("/users")
     public List<User> getUserList(){
