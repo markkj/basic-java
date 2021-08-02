@@ -1,4 +1,5 @@
-import org.apache.log4j.BasicConfigurator;
+package com.demo;
+
 import org.apache.log4j.Logger;
 
 public class ExampleLog4j {
@@ -6,6 +7,8 @@ public class ExampleLog4j {
 
     public static void main(String[] args) {
         ExampleLog4j.logger.info("Initialize ExampleLog4J Application");
+        ExceptionDemo d = new ExceptionDemo();
+        int id = d.method1("a");
     }
 
 }

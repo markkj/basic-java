@@ -1,3 +1,5 @@
+package com.demo;
+
 import java.util.Map;
 
 public class Location {

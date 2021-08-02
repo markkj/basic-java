@@ -1,5 +1,10 @@
+package com.demo;
+
+import org.apache.log4j.Logger;
 
 public class ExceptionDemo {
+    private Logger logger = Logger.getLogger(ExceptionDemo.class);
+
     public int method1(String s){
 
         return method2(s);
@@ -14,8 +19,9 @@ public class ExceptionDemo {
         try{
             int id = Integer.parseInt(s);
             return id;
-        }catch (NumberFormatException e){
-            throw new RuntimeException(e);
+        }catch (Exception e){
+            logger.error(e);
+            return -1;
         }
     }
 }
