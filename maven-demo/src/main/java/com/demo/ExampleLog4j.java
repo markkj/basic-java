@@ -8,7 +8,10 @@ public class ExampleLog4j {
     public static void main(String[] args) {
         ExampleLog4j.logger.info("Initialize ExampleLog4J Application");
         ExceptionDemo d = new ExceptionDemo();
-        int id = d.method1("a");
+        String name = d.method1("a");
+        System.out.println(name);
+        String name1 = d.method1("2");
+
     }
 
 }
